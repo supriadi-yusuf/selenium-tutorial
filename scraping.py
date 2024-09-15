@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 import pandas as pd
+import os
 
 
 website = 'https://www.adamchoi.co.uk/overs/detailed'
@@ -49,6 +50,11 @@ for match in matches:
 
 # close website, the launched chrome will be closed
 driver.quit()
+
+try:
+    os.mkdir('result')
+except FileExistsError:
+    pass
 
 df = pd.DataFrame({
     'date': dates_,
