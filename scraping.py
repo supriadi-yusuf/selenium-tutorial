@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 import time
 import pandas as pd
 import os
+from selenium.webdriver.support.ui import Select
 
 
 website = 'https://www.adamchoi.co.uk/overs/detailed'
@@ -15,11 +16,23 @@ driver.get(website)
 #title = driver.title
 #print(title)
 
-# find button
+# find button 'all match'
 all_matches_button = driver.find_element(by=By.XPATH, value='//label[@analytics-event="All matches"]')
 
 # click on the button
 all_matches_button.click()
+
+# locate drop down elemen whose id is 'country'
+dropdown_elm = driver.find_element(by=By.ID, value='country')
+
+# create drop down box
+dropdown_box = Select(dropdown_elm)
+
+# set value 'Spain' to drop down box
+dropdown_box.select_by_visible_text('Spain')
+
+# delay 3 seconds
+time.sleep(3)
 
 dates_ = []
 home_teams = []
@@ -46,7 +59,6 @@ for match in matches:
         away_teams.append(away_team)
 
 # driver.implicitly_wait(5)
-#time.sleep(5)
 
 # close website, the launched chrome will be closed
 driver.quit()
