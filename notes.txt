@@ -1,0 +1,32 @@
+video : https://www.youtube.com/watch?v=UOsRrxMKJYk&t=234s
+selenium : https://www.selenium.dev/documentation/webdriver/getting_started/first_script/
+source code : https://github.com/SeleniumHQ/seleniumhq.github.io/blob/trunk/examples/python/tests/getting_started/first_script.py
+
+1. download chrome driver
+   chrome driver version must match with chrome you have
+   chrome driver download :
+   https://developer.chrome.com/docs/chromedriver/
+   https://googlechromelabs.github.io/chrome-for-testing/#stable
+
+   chrome version :
+   dot three -> help -> about google chrome
+
+2. website
+   https://www.adamchoi.co.uk/overs/detailed
+
+
+
+XPath Syntax :
+//tagName[@AttributeName="Value"]
+example : //label[@analytics.event="All matches"] or //label[@analytics.event='All matches']
+
+//tagName/ChildTagName[index] , index start from 1
+example: //tr/td[1]   -> locate for first td element in tr element
+
+DataFrame:
+import pandas as pd # version 2.2.2, numpy 2.1.1
+
+df1 = pd.DataFrame([{'a':1,'b':2}])
+df2 = pd.DataFrame({'a':1,'b':2}, index=[])
+df3 = pd.DataFrame({'a':1,'b':2}, index=[1])
+
